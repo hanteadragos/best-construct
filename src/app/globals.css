@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  /* * -------------------- Background & Foreground -------------------- * */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* * -------------------------- Typography -------------------------- * */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* * -------------------------- Vertidigris -------------------------- * */
+  --color-vertidigris-50: #f0f4f3;
+  --color-vertidigris-100: #dce7e5;
+  --color-vertidigris-200: #b9cfcb;
+  --color-vertidigris-300: #96b7b1;
+  --color-vertidigris-400: #739f97;
+  --color-vertidigris-500: #618985;
+  --color-vertidigris-600: #507069;
+  --color-vertidigris-700: #3e574d;
+  --color-vertidigris-800: #2c3e31;
+  --color-vertidigris-900: #1a2515;
+  --color-vertidigris-950: #0d1208;
+
+  /* * -------------------------- BreakPoints -------------------------- * */
+  --breakpoint-*: initial;
+  --breakpoint-mobile-s: 320px;
+  --breakpoint-mobile-m: 375px;
+  --breakpoint-mobile-l: 425px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-laptop-l: 1440px;
+}
+
+@layer components {
+  .section-title {
+    @apply to-vertidigris-600 mobile-m:text-3xl mobile-l:text-[34px] tablet:text-5xl laptop:text-[58px] mt-6 bg-gradient-to-b from-black bg-clip-text text-center text-[28px] font-medium tracking-tighter text-transparent;
+  }
+  .primary-button {
+    @apply from-vertidigris-400 to-vertidigris-600 inline-flex items-center gap-2 rounded-lg bg-gradient-to-b px-3 py-2 text-center text-white;
+  }
+  .secondary-button {
+    @apply inline-flex items-center gap-2 rounded-lg border border-[#222]/25 bg-white/75 px-3 py-2 text-center text-black;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+}
